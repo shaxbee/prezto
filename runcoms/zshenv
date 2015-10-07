@@ -9,3 +9,9 @@
 if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+
+export PROJECT_HOME="${HOME}/workspace"
+export GOPATH="${HOME}/workspace/golang"
+export PYENV_ROOT="/usr/var/local/pyenv"
+
+export PATH="${PATH}:${GOPATH}/bin"

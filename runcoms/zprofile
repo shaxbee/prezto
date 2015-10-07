@@ -4,6 +4,10 @@
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
+#
+
+export LC_ALL="en_US.UTF-8"
+export ZDOTDIR="$HOME/.config/zsh"
 
 #
 # Browser

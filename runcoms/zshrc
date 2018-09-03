@@ -13,4 +13,18 @@ fi
 # Customize to your needs...
 alias vi=vim
 
+if [[ $+commands[ccat] ]]; then
+  alias cat=ccat
+fi
+
+if [[ $+commands[jenv] ]]; then
+  source <(jenv init -)
+fi
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+test -e "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc" && source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+test -e "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc" && source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
+if [[ $+commands[kubectl] ]]; then
+  source <(kubectl completion zsh)
+fi

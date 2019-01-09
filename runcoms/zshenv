@@ -10,7 +10,5 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-export KUBE_AGNOSTER_CTX_MAP="minikube green:minikube *mysmartcontrol-test*bigos green:bigos *mysmartcontrol-test*cluster-1 yellow:sushi *mysmartcontrol-1209* red:prod *smartace*dev green:smartace-dev"
-
 export PROJECT_HOME="${HOME}/workspace"
 export PATH="${PATH}:${GOPATH:-${HOME}/go}/bin"

@@ -13,22 +13,27 @@ fi
 # Customize to your needs...
 alias vi=vim
 
-if [[ $+commands[ccat] ]]; then
+if (( $+commands[ccat] )); then
   alias cat=ccat
 fi
 
-if [[ $+commands[jenv] ]]; then
+if (( $+commands[jenv] )); then
   source <(jenv init -)
 fi
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-test -e "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc" && source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-test -e "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc" && source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+if [[ -f "${HOME}/.iterm2_shell_integration.zsh" ]]; then
+  source "${HOME}/.iterm2_shell_integration.zsh"
+fi
 
-if [[ $+commands[kubectl] ]]; then
+if [[ -d "/usr/local/Caskroom/google-cloud-sdk" ]]; then
+  source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+  source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+fi
+
+if (( $+commands[kubectl] )); then
   source <(kubectl completion zsh)
 fi
 
-if [[ -n $(brew --prefix nvm) ]]; then
+if [[ -d $(brew --prefix nvm) ]]; then
   source $(brew --prefix nvm)/nvm.sh
 fi

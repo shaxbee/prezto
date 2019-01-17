@@ -35,5 +35,7 @@ if (( $+commands[kubectl] )); then
 fi
 
 if [[ -d $(brew --prefix nvm) ]]; then
+  export NVM_DIR="${HOME}/.nvm"
+  mkdir -p "${NVM_DIR}"
   source $(brew --prefix nvm)/nvm.sh
 fi

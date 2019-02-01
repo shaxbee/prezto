@@ -107,7 +107,7 @@ prompt_kube() {
 		return
 	fi
 
-	local ctx=$(kubectl config current-context)
+	local ctx=$(kubectl config current-context 2>/dev/null)
 	if [[ -z "$ctx" ]]; then
 		return
 	fi

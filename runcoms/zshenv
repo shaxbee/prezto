@@ -11,4 +11,3 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
 fi
 
 export PROJECT_HOME="${HOME}/workspace"
-export PATH="${PATH}:${GOPATH:-${HOME}/go}/bin"

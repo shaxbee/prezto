@@ -30,8 +30,20 @@ if [[ -d "/usr/local/Caskroom/google-cloud-sdk" ]]; then
   source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 fi
 
+if [[ -d "${HOME}/.tgenv/bin" ]]; then
+  export PATH="${HOME}/.tgenv/bin:${PATH}"
+fi
+
+if [[ -d "${HOME}/.helmenv/bin" ]]; then
+  export PATH="${HOME}/.helmenv/bin:${PATH}"
+fi
+
 if (( $+commands[kubectl] )); then
   source <(kubectl completion zsh)
+fi
+
+if (( $+commands[direnv] )); then
+  source <(direnv hook zsh)
 fi
 
 if [[ -d $(brew --prefix nvm) ]]; then
